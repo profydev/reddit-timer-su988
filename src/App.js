@@ -1,10 +1,15 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div>
-      App Placeholder
-    </div>
+    <Router>
+      <div>Placeholder</div>
+      <Switch>
+        <Route path="/" />
+        <Route path="/search" />
+      </Switch>
+    </Router>
   );
 }
 
