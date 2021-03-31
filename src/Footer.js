@@ -21,7 +21,7 @@ const StyledIcon = styled.p``;
 function Footer() {
   return (
     <StyledFooter>
-      <StyledLink href="https://ooloo.io/employers">profy.dev</StyledLink>
+      <StyledLink href="https://profy.dev/employers">profy.dev</StyledLink>
       <StyledIcon>
         <Link to="/">
           <img src="./sign.svg" alt="" />

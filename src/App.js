@@ -11,6 +11,7 @@ function App() {
       <Switch>
         <Route path="/" />
         <Route path="/search" />
+        <Route path="/terms" />
       </Switch>
     </Router>
   );
