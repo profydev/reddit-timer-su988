@@ -9,7 +9,7 @@ function App() {
       <Header />
       <Footer />
       <Switch>
-        <Route path="/" />
+        <Route exact path="/" />
         <Route path="/search" />
         <Route path="/terms" />
       </Switch>
