@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledNav = styled.nav`
-  border: 2px solid red;
   display: flex;
   justify-content: space-between;
   align-items: center;
