@@ -6,7 +6,8 @@ const StyledFooter = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 250px 0 290px;
+  max-width: 950px;
+  margin: auto;
 `;
 
 const StyledHref = styled.a`
@@ -21,7 +22,13 @@ const StyledLink = styled(Link)`
   font-size: 14px;
 `;
 
-const StyledIcon = styled.p``;
+const StyledIcon = styled.p`
+  margin-right: -45px;
+`;
+
+const Div = styled.div`
+  margin-right: 10px;
+`;
 
 function Footer() {
   return (
@@ -29,10 +36,12 @@ function Footer() {
       <StyledHref href="https://profy.dev/employers">profy.dev</StyledHref>
       <StyledIcon>
         <Link to="/">
-          <img src="./sign.svg" alt="" />
+          <img src="/sign.svg" alt="" />
         </Link>
       </StyledIcon>
-      <StyledLink to="/terms">Terms & Privacy</StyledLink>
+      <Div>
+        <StyledLink to="/terms">Terms & Privacy</StyledLink>
+      </Div>
     </StyledFooter>
   );
 }
