@@ -1,16 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Section = styled.section`
   text-align: center;
-  margin-top: 50px;
+  margin-top: 51px;
 `;
 
 const Title = styled.h1`
   font-family: 'Bitter', serif;
   font-weight: normal;
   font-size: 38px;
-  letter-spacing: 1px;
+  letter-spacing: 0.8px;
 `;
 
 const Subtitle = styled.p`
@@ -28,11 +29,16 @@ const Button = styled.button`
   font-size: 14px;
   letter-spacing: 0.5px;
   margin-top: 30px;
+  cursor: pointer;
 `;
 
 const StyledSub = styled.p`
   margin-top: 45px;
   color: #93918f;
+`;
+
+const Img = styled.img`
+  margin-top: 20px;
 `;
 
 function Hero() {
@@ -43,8 +49,13 @@ function Hero() {
         Great timimg, great results! Find the best time to post on your
         subreddit.
       </Subtitle>
-      <Button type="submit">Show me the best time</Button>
+      <Link to="/search/javascript">
+        <Button type="submit">Show me the best time</Button>
+      </Link>
       <StyledSub>r/javascript</StyledSub>
+      <Link to="/search/javascript">
+        <Img src="/table.svg" alt="Table" />
+      </Link>
     </Section>
   );
 }

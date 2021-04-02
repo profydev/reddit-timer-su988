@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Header from './Header';
 import Hero from './Hero';
-// import Footer from './Footer';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <Route path="/search" />
         <Route path="/terms" />
       </Switch>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
   );
 }
