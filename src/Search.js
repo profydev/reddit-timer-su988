@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -54,6 +54,10 @@ function Search() {
   const { slug } = useParams();
   const [query, setQuery] = useState(slug);
   const history = useHistory();
+
+  useEffect(() => {
+    setQuery(slug);
+  }, [slug]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
