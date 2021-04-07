@@ -5,10 +5,11 @@ import styled from 'styled-components';
 const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 940px;
-  margin: auto;
-  margin-bottom: 50px;
+  margin: 0 auto;
+  height: 100px;
 `;
 
 const StyledHref = styled.a`
