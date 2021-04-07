@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import styled from 'styled-components';
 
 const Nav = styled.nav`
@@ -20,7 +21,7 @@ const StyledListItem = styled.li`
   margin-right: -1px;
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(HashLink)`
   text-decoration: none;
   margin-left: 26px;
   color: #636363;
@@ -38,10 +39,14 @@ function Header() {
             <StyledLink to="/search/javascript">Search</StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLink to="/#how-it-works">How it works</StyledLink>
+            <StyledLink smooth to="/#how-it-works">
+              How it works
+            </StyledLink>
           </StyledListItem>
           <StyledListItem>
-            <StyledLink to="/#about">About</StyledLink>
+            <StyledLink smooth to="/#about">
+              About
+            </StyledLink>
           </StyledListItem>
         </StyledList>
       </Nav>

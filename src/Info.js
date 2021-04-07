@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Section = styled.section`
   max-width: 740px;
   margin: auto;
+  margin-bottom: 130px;
 `;
 
 const Title = styled.p`
@@ -52,7 +53,7 @@ function Info() {
   return (
     <Section>
       <Article1>
-        <Title>How it works</Title>
+        <Title id="how-it-works">How it works</Title>
         <List>
           <ListItem>
             We find the 500 top posts from the past year for a subreddit.
@@ -65,7 +66,7 @@ function Info() {
         </List>
       </Article1>
       <Article2>
-        <Title>About</Title>
+        <Title id="about">About</Title>
         <About>
           This app was created during a course on
           <Href href="https://profy.dev"> profy.dev </Href>
