@@ -4,6 +4,7 @@ import styled from 'styled-components';
 const Section = styled.section`
   max-width: 740px;
   margin: auto;
+  margin-bottom: 130px;
 `;
 
 const Title = styled.p`
