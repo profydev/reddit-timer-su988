@@ -8,6 +8,7 @@ const StyledFooter = styled.footer`
   width: 100%;
   max-width: 940px;
   margin: auto;
+  margin-bottom: 50px;
 `;
 
 const StyledHref = styled.a`
