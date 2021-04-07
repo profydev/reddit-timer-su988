@@ -53,7 +53,7 @@ function Info() {
     <Section>
       <Article1>
         <Title>How it works</Title>
-        <List>
+        <List id="how-it-works">
           <ListItem>
             We find the 500 top posts from the past year for a subreddit.
           </ListItem>
@@ -66,7 +66,7 @@ function Info() {
       </Article1>
       <Article2>
         <Title>About</Title>
-        <About>
+        <About id="about">
           This app was created during a course on
           <Href href="https://profy.dev"> profy.dev </Href>
           with the goal to implement a pixel-perfect real-world application with
