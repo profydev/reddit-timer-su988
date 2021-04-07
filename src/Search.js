@@ -35,7 +35,7 @@ const Input = styled.input`
   letter-spacing: 0.8px;
 `;
 
-const Button = styled.input`
+const Button = styled.button`
   width: 92px;
   height: 36px;
   font-size: 14px;
@@ -44,6 +44,10 @@ const Button = styled.input`
   background-color: #fdb755;
   border: none;
   border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 function Search() {
@@ -66,7 +70,7 @@ function Search() {
           onChange={(e) => setQuery(e.target.value)}
           value={query}
         />
-        <Button type="submit" value="Search" />
+        <Button>Search</Button>
       </Form>
     </Section>
   );
