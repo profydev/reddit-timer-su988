@@ -9,7 +9,6 @@ function App() {
   return (
     <Router>
       <Header />
-      <Footer />
       <Switch>
         <Route exact path="/">
           <Hero />
