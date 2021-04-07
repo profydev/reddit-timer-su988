@@ -25,7 +25,6 @@ const StyledLink = styled(Link)`
   text-align: end;
 `;
 
-
 function Footer() {
   return (
     <StyledFooter>
