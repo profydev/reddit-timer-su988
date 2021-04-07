@@ -1,18 +1,7 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import styled from 'styled-components';
-import { useParams, useHistory } from 'react-router-dom';
-
-const Section = styled.section`
-  text-align: center;
-  margin-top: 51px;
-`;
-
-const Title = styled.h1`
-  font-family: 'Bitter', serif;
-  font-weight: normal;
-  font-size: 38px;
-  letter-spacing: 0.8px;
-`;
+import { useHistory } from 'react-router-dom';
 
 const Form = styled.form`
   margin-top: 30px;
@@ -50,14 +39,8 @@ const Button = styled.button`
   }
 `;
 
-function Search() {
-  const { slug } = useParams();
-  const [query, setQuery] = useState(slug);
+function SearchForm({ query, setQuery }) {
   const history = useHistory();
-
-  useEffect(() => {
-    setQuery(slug);
-  }, [slug]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -65,8 +48,7 @@ function Search() {
   };
 
   return (
-    <Section>
-      <Title>Find the best time for a subreddit</Title>
+    <>
       <Form onSubmit={handleSubmit}>
         <Span>r /</Span>
         <Input
@@ -74,10 +56,10 @@ function Search() {
           onChange={(e) => setQuery(e.target.value)}
           value={query}
         />
-        <Button>Search</Button>
+        <Button type="submit">Search</Button>
       </Form>
-    </Section>
+    </>
   );
 }
 
-export default Search;
+export default SearchForm;
