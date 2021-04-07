@@ -51,9 +51,9 @@ const Href = styled.a`
 function Info() {
   return (
     <Section>
-      <Article1>
+      <Article1 id="how-it-works">
         <Title>How it works</Title>
-        <List id="how-it-works">
+        <List>
           <ListItem>
             We find the 500 top posts from the past year for a subreddit.
           </ListItem>
@@ -64,9 +64,9 @@ function Info() {
           <ListItem>See immediately when to submit your reddit post.</ListItem>
         </List>
       </Article1>
-      <Article2>
+      <Article2 id="about">
         <Title>About</Title>
-        <About id="about">
+        <About>
           This app was created during a course on
           <Href href="https://profy.dev"> profy.dev </Href>
           with the goal to implement a pixel-perfect real-world application with
