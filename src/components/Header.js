@@ -8,13 +8,15 @@ const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 80px 0 80px;
-  margin-top: 26px;
+  max-width: calc(100% - 160px);
+  margin: auto;
+  height: 100px;
 `;
 
 const StyledList = styled.ul`
   display: flex;
   list-style: none;
+  margin-right: -14px;
 `;
 
 const StyledListItem = styled.li`
