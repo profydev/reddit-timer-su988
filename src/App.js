@@ -18,6 +18,7 @@ function App() {
         <Route path="/search/:slug">
           <Search />
         </Route>
+        <Route path="/search" />
         <Route path="/terms" />
       </Switch>
       <Footer />
