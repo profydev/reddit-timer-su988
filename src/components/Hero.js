@@ -9,13 +9,6 @@ const Section = styled.section`
   align-items: center;
 `;
 
-const Title = styled.h1`
-  font-family: 'Bitter', serif;
-  font-weight: normal;
-  font-size: 38px;
-  letter-spacing: 0.8px;
-`;
-
 const Subtitle = styled.p`
   color: #93918f;
   margin-top: -2px;
@@ -24,7 +17,6 @@ const Subtitle = styled.p`
 
 const Subreddit = styled.p`
   margin-top: 45px;
-  color: #93918f;
 `;
 
 const Img = styled.img`
@@ -34,7 +26,7 @@ const Img = styled.img`
 function Hero() {
   return (
     <Section>
-      <Title>No reactions to your reddit posts?</Title>
+      <h1>No reactions to your reddit posts?</h1>
       <Subtitle>
         Great timimg, great results! Find the best time to post on your
         subreddit.

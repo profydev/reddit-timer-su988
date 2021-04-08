@@ -8,9 +8,8 @@ const Section = styled.section`
   padding-top: 25px;
 `;
 
-const Title = styled.p`
+const Title = styled.h1`
   font-size: 24px;
-  font-family: 'Bitter', serif;
 `;
 
 const Article = styled.article`
@@ -38,7 +37,6 @@ const ListItem = styled.li`
 const About = styled.p`
   line-height: 27px;
   margin-top: -10px;
-  color: #93918f;
 `;
 
 const Href = styled.a`

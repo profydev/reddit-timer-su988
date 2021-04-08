@@ -8,13 +8,6 @@ const Section = styled.section`
   min-height: calc(100vh - 251px);
 `;
 
-const Title = styled.h1`
-  font-family: 'Bitter', serif;
-  font-weight: normal;
-  font-size: 38px;
-  letter-spacing: 0.8px;
-`;
-
 function Search() {
   const { slug } = useParams();
   const [query, setQuery] = useState(slug);
@@ -25,7 +18,7 @@ function Search() {
 
   return (
     <Section>
-      <Title>Find the best time for a subreddit</Title>
+      <h1>Find the best time for a subreddit</h1>
       <SearchForm query={query} setQuery={setQuery} />
     </Section>
   );
