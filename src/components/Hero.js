@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Button from './Button';
 
 const Section = styled.section`
-  text-align: center;
-  margin-top: 51px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Title = styled.h1`
@@ -16,23 +18,11 @@ const Title = styled.h1`
 
 const Subtitle = styled.p`
   color: #93918f;
+  margin-top: -2px;
+  margin-bottom: 45px;
 `;
 
-const Button = styled.button`
-  width: 217px;
-  height: 36px;
-  border-radius: 4px;
-  border: none;
-  background-color: #fdb755;
-  color: #fff;
-  text-transform: uppercase;
-  font-size: 14px;
-  letter-spacing: 0.5px;
-  margin-top: 30px;
-  cursor: pointer;
-`;
-
-const StyledSub = styled.p`
+const Subreddit = styled.p`
   margin-top: 45px;
   color: #93918f;
 `;
@@ -50,9 +40,9 @@ function Hero() {
         subreddit.
       </Subtitle>
       <Link to="/search/javascript">
-        <Button type="submit">Show me the best time</Button>
+        <Button text="Show me the best time" padding="12px" />
       </Link>
-      <StyledSub>r/javascript</StyledSub>
+      <Subreddit>r/javascript</Subreddit>
       <Link to="/search/javascript">
         <Img src="/table.svg" alt="Table" />
       </Link>

@@ -2,9 +2,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useHistory } from 'react-router-dom';
+import Button from './Button';
 
 const Form = styled.form`
   margin-top: 30px;
+  margin-left: -2px;
 `;
 
 const Span = styled.span`
@@ -24,21 +26,6 @@ const Input = styled.input`
   letter-spacing: 0.8px;
 `;
 
-const Button = styled.button`
-  width: 92px;
-  height: 36px;
-  font-size: 14px;
-  text-transform: uppercase;
-  color: #fff;
-  background-color: #fdb755;
-  border: none;
-  border-radius: 4px;
-
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
 function SearchForm({ query, setQuery }) {
   const history = useHistory();
 
@@ -56,7 +43,7 @@ function SearchForm({ query, setQuery }) {
           onChange={(e) => setQuery(e.target.value)}
           value={query}
         />
-        <Button type="submit">Search</Button>
+        <Button text="Search" padding="12px" />
       </Form>
     </>
   );

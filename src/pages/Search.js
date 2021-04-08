@@ -5,7 +5,6 @@ import SearchForm from '../components/SearchForm';
 
 const Section = styled.section`
   text-align: center;
-  margin-top: 51px;
   min-height: calc(100vh - 251px);
 `;
 

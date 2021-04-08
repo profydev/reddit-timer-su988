@@ -5,6 +5,7 @@ const Section = styled.section`
   max-width: 740px;
   margin: auto;
   margin-bottom: 95px;
+  padding-top: 25px;
 `;
 
 const Title = styled.p`
@@ -12,8 +13,8 @@ const Title = styled.p`
   font-family: 'Bitter', serif;
 `;
 
-const Article1 = styled.article`
-  margin-top: 130px;
+const Article = styled.article`
+  margin-top: 105px;
 `;
 
 const List = styled.ul`
@@ -34,10 +35,6 @@ const ListItem = styled.li`
   }
 `;
 
-const Article2 = styled.article`
-  margin-top: 105px;
-`;
-
 const About = styled.p`
   line-height: 27px;
   margin-top: -10px;
@@ -52,7 +49,7 @@ const Href = styled.a`
 function Info() {
   return (
     <Section>
-      <Article1>
+      <Article>
         <Title id="how-it-works">How it works</Title>
         <List>
           <ListItem>
@@ -64,8 +61,8 @@ function Info() {
           </ListItem>
           <ListItem>See immediately when to submit your reddit post.</ListItem>
         </List>
-      </Article1>
-      <Article2>
+      </Article>
+      <Article>
         <Title id="about">About</Title>
         <About>
           This app was created during a course on
@@ -78,7 +75,7 @@ function Info() {
             Click here for more information.
           </Href>
         </About>
-      </Article2>
+      </Article>
     </Section>
   );
 }

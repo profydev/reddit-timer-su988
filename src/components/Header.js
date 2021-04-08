@@ -13,13 +13,12 @@ const Nav = styled.nav`
   height: 100px;
 `;
 
-const StyledList = styled.ul`
+const List = styled.ul`
   display: flex;
   list-style: none;
-  margin-right: -14px;
 `;
 
-const StyledListItem = styled.li`
+const ListItem = styled.li`
   margin-right: -1px;
 `;
 
@@ -36,21 +35,21 @@ function Header() {
         <Link to="/">
           <img src="./logo.svg" alt="Logo" />
         </Link>
-        <StyledList>
-          <StyledListItem>
+        <List>
+          <ListItem>
             <StyledLink to="/search/javascript">Search</StyledLink>
-          </StyledListItem>
-          <StyledListItem>
+          </ListItem>
+          <ListItem>
             <StyledLink smooth to="/#how-it-works">
               How it works
             </StyledLink>
-          </StyledListItem>
-          <StyledListItem>
+          </ListItem>
+          <ListItem>
             <StyledLink smooth to="/#about">
               About
             </StyledLink>
-          </StyledListItem>
-        </StyledList>
+          </ListItem>
+        </List>
       </Nav>
     </header>
   );
