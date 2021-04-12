@@ -1,8 +1,8 @@
 /* eslint operator-linebreak: ["error", "after", { "overrides": { "+=": "before" } }] */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
 import styled, { keyframes } from 'styled-components';
+import useFetchData from '../hooks/useFetchData';
 
 const rotate = keyframes`
   from {
@@ -21,39 +21,13 @@ const Img = styled.img`
 
 function LoadData() {
   const { slug } = useParams();
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    async function fetchData(temp = [], next = '') {
-      setLoading(true);
-      let url = `https://www.reddit.com/r/${slug}/top.json?t=year&limit=100`;
-
-      if (temp.length > 400) {
-        setLoading(false);
-        return;
-      }
-
-      if (next) {
-        url = `${url}&after=${next}`;
-      }
-
-      const result = await axios(url);
-      const currData = result.data.data.children;
-      const nextPage = result.data.data.after;
-      temp.push(...currData);
-      setData(temp);
-      fetchData(temp, nextPage);
-    }
-
-    fetchData();
-  }, [slug]);
+  const { loading, error, posts } = useFetchData(slug);
 
   return (
     <>
       {loading && <Img src="/loading_spinner.svg" alt="Logo" />}
-      {!loading &&
-        data.map((item) => <div key={item.data.id}>{item.data.author}</div>)}
+      {!loading && posts.length}
+      {error}
     </>
   );
 }
