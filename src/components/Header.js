@@ -33,7 +33,7 @@ function Header() {
     <header>
       <Nav>
         <Link to="/">
-          <img src="./logo.svg" alt="Logo" />
+          <img src="/logo.svg" alt="Logo" />
         </Link>
         <List>
           <ListItem>
