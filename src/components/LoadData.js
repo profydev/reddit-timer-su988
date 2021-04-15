@@ -1,33 +1,24 @@
-/* eslint operator-linebreak: ["error", "after", { "overrides": { "+=": "before" } }] */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import styled, { keyframes } from 'styled-components';
 import useFetchData from '../hooks/useFetchData';
-
-const rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(359deg);
-  }
-`;
-
-const Img = styled.img`
-  margin-top: 50px;
-  animation: ${rotate} 1.5s infinite linear;
-`;
+import LoadingSpinner from './LoadingSpinner';
+import Heatmap from './Heatmap';
+import groupByDay from '../utils/groupByDay';
 
 function LoadData() {
   const { slug } = useParams();
   const { loading, error, posts } = useFetchData(slug);
+  const [postsByDay, setPostsByDay] = useState(null);
+
+  useEffect(() => {
+    setPostsByDay(groupByDay(posts));
+  }, [posts]);
 
   return (
     <>
-      {loading && <Img src="/loading_spinner.svg" alt="Logo" />}
-      {!loading && posts.length}
-      {error}
+      {loading && <LoadingSpinner />}
+      {error && <div>Please try again</div>}
+      {!loading && <Heatmap posts={postsByDay} />}
     </>
   );
 }

@@ -14,8 +14,9 @@ export async function fetchData(subreddit, temp = [], next = null) {
 
   const result = await axios(url);
   const currData = result.data.data.children;
+  const parsed = currData.map((data) => data.data);
   const nextPage = result.data.data.after;
-  temp.push(...currData);
+  temp.push(...parsed);
   return fetchData(subreddit, temp, nextPage);
 }
 
