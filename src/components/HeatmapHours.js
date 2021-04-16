@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { hours } from '../utils/constants';
 
 const Div = styled.div`
-  min-width: 154px;
+  width: 154px;
   min-height: 52px;
   background-color: #fff;
 `;
@@ -28,7 +28,7 @@ const SpanH = styled.span`
 `;
 
 function HeatmapHours() {
-  const timeUi = hours.map((hour) => <SpanH>{hour}</SpanH>);
+  const timeUi = hours.map((hour) => <SpanH key={hour}>{hour}</SpanH>);
   return (
     <>
       <Title>

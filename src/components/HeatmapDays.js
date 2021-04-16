@@ -18,7 +18,7 @@ const SpanD = styled.span`
 `;
 
 function HeatmapDays() {
-  const dayUi = days.map((day) => <SpanD>{day}</SpanD>);
+  const dayUi = days.map((day) => <SpanD key={day}>{day}</SpanD>);
   return (
     <>
       <Days>{dayUi}</Days>
