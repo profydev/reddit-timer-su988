@@ -21,13 +21,13 @@ const Tile = styled.div`
   &:hover {
     border: 1px solid black;
   }
+
+  ${(props) => (props.active ? `border:1px solid black` : '')};
 `;
 
 function HeatmapTile({ posts, index, selected, setSelected }) {
   const handleClick = () => {
-    console.log(posts);
-    console.log(index.hour);
-    setSelected(true);
+    setSelected(index);
   };
 
   return (

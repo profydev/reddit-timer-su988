@@ -7,15 +7,15 @@ import HeatmapDays from './HeatmapDays';
 import HeatmapTile from './HeatmapTile';
 
 function Heatmap({ posts }) {
-  const [selected, setSelected] = useState(false);
+  const [selected, setSelected] = useState();
 
   const rows = posts.map((days, i) => {
     const columns = days.map((hours, j) => (
       <HeatmapTile
         key={uuidv4()}
         posts={hours}
-        index={{ day: i, hour: j }}
-        selected={selected}
+        index={[i, j]}
+        selected={selected && selected[0] === i && selected[1] === j}
         setSelected={setSelected}
       />
     ));
