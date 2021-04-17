@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
@@ -5,6 +6,7 @@ import { v4 as uuidv4 } from 'uuid';
 import HeatmapHours from './HeatmapHours';
 import HeatmapDays from './HeatmapDays';
 import HeatmapTile from './HeatmapTile';
+import PostsTable from './PostsTable';
 
 function Heatmap({ posts }) {
   const [selected, setSelected] = useState();
@@ -30,6 +32,8 @@ function Heatmap({ posts }) {
         <HeatmapDays />
         <Tiles>{rows}</Tiles>
       </Div>
+      <Timezone>timezone</Timezone>
+      {table && table.length > 0 && <PostsTable posts={table} />}
     </Main>
   );
 }
@@ -58,3 +62,5 @@ const Tiles = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
+const Timezone = styled.div``;
