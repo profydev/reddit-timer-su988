@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import getTime from '../utils/getTime';
 import HeatmapHours from './HeatmapHours';
 import HeatmapDays from './HeatmapDays';
 import HeatmapTile from './HeatmapTile';
 
 function Heatmap({ posts }) {
   const [selected, setSelected] = useState();
+  const [table, setTable] = useState([]);
 
   const rows = posts.map((days, i) => {
     const columns = days.map((hours, j) => (
@@ -17,11 +19,19 @@ function Heatmap({ posts }) {
         index={[i, j]}
         selected={selected && selected[0] === i && selected[1] === j}
         setSelected={setSelected}
+        setTable={setTable}
       />
     ));
 
     return columns;
   });
+
+  const ui = table.map((post) => (
+    <>
+      <td>{post.title}</td>
+      <td>{getTime(post.created_utc)}</td>
+    </>
+  ));
 
   return (
     <Main>
@@ -30,6 +40,8 @@ function Heatmap({ posts }) {
         <HeatmapDays />
         <Tiles>{rows}</Tiles>
       </Div>
+      <Timezone>timezone</Timezone>
+      <Table>{table.length > 0 && ui}</Table>
     </Main>
   );
 }
@@ -58,3 +70,21 @@ const Tiles = styled.div`
   display: flex;
   flex-wrap: wrap;
 `;
+
+const Timezone = styled.div``;
+const Table = styled.table``;
+
+// {
+//   /* <table>
+//   <thead>
+//     <tr>
+//       <th></th>
+//     </tr>
+//   </thead>
+//   <tbody>
+//     <tr>
+//       <td></td>
+//     </tr>
+//   </tbody>
+// </table>; */
+// }
