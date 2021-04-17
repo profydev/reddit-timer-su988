@@ -21,6 +21,7 @@ function Heatmap({ posts }) {
         selected={selected && selected[0] === i && selected[1] === j}
         setSelected={setSelected}
         setTable={setTable}
+
       />
     ));
 
