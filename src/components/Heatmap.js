@@ -32,7 +32,11 @@ function Heatmap({ posts }) {
         <HeatmapDays />
         <Tiles>{rows}</Tiles>
       </Div>
-      <Timezone>timezone</Timezone>
+      <Timezone>
+        {' '}
+        All times are shown in your timezone:{' '}
+        <Span>{Intl.DateTimeFormat().resolvedOptions().timeZone}</Span>
+      </Timezone>
       {table && table.length > 0 && <PostsTable posts={table} />}
     </Main>
   );
@@ -63,4 +67,12 @@ const Tiles = styled.div`
   flex-wrap: wrap;
 `;
 
-const Timezone = styled.div``;
+const Timezone = styled.div`
+  font-size: 14px;
+  color: #93918f;
+  margin-top: 12px;
+`;
+
+const Span = styled.span`
+  font-weight: bold;
+`;
