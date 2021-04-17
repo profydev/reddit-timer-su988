@@ -10,7 +10,7 @@ function PostsTable({ posts }) {
       <tr>
         <TableData>
           <Href
-            href={`https:/reddit.com${post.permalink}`}
+            href={`https://reddit.com${post.permalink}`}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -26,7 +26,7 @@ function PostsTable({ posts }) {
           <TableData>
             {' '}
             <Href
-              href={`https://www.reddit.com/u/${post.author}`}
+              href={`https://reddit.com/u/${post.author}`}
               target="_blank"
               rel="noopener noreferrer"
             >
