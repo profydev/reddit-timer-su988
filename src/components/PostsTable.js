@@ -9,7 +9,11 @@ function PostsTable({ posts }) {
     posts.map((post) => (
       <tr>
         <TableData>
-          <Href href={post.url} target="blank" rel="noopener noreferrer">
+          <Href
+            href={`https:/reddit.com${post.permalink}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {post.title}
           </Href>
         </TableData>
@@ -22,8 +26,8 @@ function PostsTable({ posts }) {
           <TableData>
             {' '}
             <Href
-              href={`https://www.reddit.com/user/${post.author}`}
-              target="blank"
+              href={`https://www.reddit.com/u/${post.author}`}
+              target="_blank"
               rel="noopener noreferrer"
             >
               {post.author}
