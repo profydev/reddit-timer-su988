@@ -1,11 +1,12 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import getTime from '../utils/getTime';
 import HeatmapHours from './HeatmapHours';
 import HeatmapDays from './HeatmapDays';
 import HeatmapTile from './HeatmapTile';
+import PostsTable from './PostsTable';
 
 function Heatmap({ posts }) {
   const [selected, setSelected] = useState();
@@ -26,13 +27,6 @@ function Heatmap({ posts }) {
     return columns;
   });
 
-  const ui = table.map((post) => (
-    <>
-      <td>{post.title}</td>
-      <td>{getTime(post.created_utc)}</td>
-    </>
-  ));
-
   return (
     <Main>
       <HeatmapHours />
@@ -41,7 +35,7 @@ function Heatmap({ posts }) {
         <Tiles>{rows}</Tiles>
       </Div>
       <Timezone>timezone</Timezone>
-      <Table>{table.length > 0 && ui}</Table>
+      {table && table.length > 0 && <PostsTable posts={table} />}
     </Main>
   );
 }
@@ -72,19 +66,3 @@ const Tiles = styled.div`
 `;
 
 const Timezone = styled.div``;
-const Table = styled.table``;
-
-// {
-//   /* <table>
-//   <thead>
-//     <tr>
-//       <th></th>
-//     </tr>
-//   </thead>
-//   <tbody>
-//     <tr>
-//       <td></td>
-//     </tr>
-//   </tbody>
-// </table>; */
-// }
