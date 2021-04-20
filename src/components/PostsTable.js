@@ -4,36 +4,38 @@ import styled from 'styled-components';
 import dayjs from 'dayjs';
 
 function PostsTable({ posts }) {
-  const ui = posts?.map((post) => (
-    <tr>
-      <TableData>
-        <Href
-          href={`https://reddit.com${post.permalink}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {post.title}
-        </Href>
-      </TableData>
-      <TableData>{dayjs.unix(post.created_utc).format('h:mm a')}</TableData>
-      <TableData>{post.score}</TableData>
-      <TableData>{post.num_comments}</TableData>
-      {post.author === 'deleted' ? (
-        <TableData>{post.author}</TableData>
-      ) : (
+  const ui =
+    posts &&
+    posts.map((post) => (
+      <tr>
         <TableData>
-          {' '}
           <Href
-            href={`https://reddit.com/u/${post.author}`}
+            href={`https://reddit.com${post.permalink}`}
             target="_blank"
             rel="noopener noreferrer"
           >
-            {post.author}
+            {post.title}
           </Href>
         </TableData>
-      )}
-    </tr>
-  ));
+        <TableData>{dayjs.unix(post.created_utc).format('h:mm a')}</TableData>
+        <TableData>{post.score}</TableData>
+        <TableData>{post.num_comments}</TableData>
+        {post.author === 'deleted' ? (
+          <TableData>{post.author}</TableData>
+        ) : (
+          <TableData>
+            {' '}
+            <Href
+              href={`https://reddit.com/u/${post.author}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {post.author}
+            </Href>
+          </TableData>
+        )}
+      </tr>
+    ));
   return (
     <Section>
       <Header>Posts</Header>
