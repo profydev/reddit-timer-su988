@@ -25,9 +25,8 @@ const Tile = styled.div`
   ${(props) => (props.active ? 'border:1px solid black' : '')};
 `;
 
-function HeatmapTile({ posts, index, selected, setSelected, setTable }) {
+function HeatmapTile({ posts, index, selected, setSelected }) {
   const handleClick = () => {
-    setTable(posts);
     setSelected(index);
   };
 
