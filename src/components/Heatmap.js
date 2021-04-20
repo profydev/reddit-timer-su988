@@ -9,15 +9,16 @@ import HeatmapTile from './HeatmapTile';
 import PostsTable from './PostsTable';
 
 function Heatmap({ posts }) {
-  const [selected, setSelected] = useState();
+  const [selected, setSelected] = useState({ day: null, hour: null });
+  const { day, hour } = selected;
 
   const rows = posts.map((days, i) => {
     const columns = days.map((hours, j) => (
       <HeatmapTile
         key={uuidv4()}
         posts={hours}
-        index={[i, j]}
-        selected={selected && selected[0] === i && selected[1] === j}
+        index={{ day: i, hour: j }}
+        selected={selected.day === i && selected.hour === j}
         setSelected={setSelected}
       />
     ));
@@ -37,7 +38,9 @@ function Heatmap({ posts }) {
         All times are shown in your timezone:{' '}
         <Span>{Intl.DateTimeFormat().resolvedOptions().timeZone}</Span>
       </Timezone>
-      {table && table.length > 0 && <PostsTable posts={table} />}
+      {posts[day] && posts[day][hour].length > 0 && (
+        <PostsTable posts={posts[day][hour]} />
+      )}
     </Main>
   );
 }
