@@ -22,7 +22,7 @@ const Tile = styled.div`
     border: 1px solid black;
   }
 
-  ${(props) => (props.active ? `border:1px solid black` : '')};
+  ${(props) => (props.active ? 'border:1px solid black' : '')};
 `;
 
 function HeatmapTile({ posts, index, selected, setSelected }) {
