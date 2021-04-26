@@ -1,6 +1,6 @@
 <h1 align="center"> Welcome to Reddit Timer App 👋</h1>
 
-[![App Home Screen](/hero-section.png 'Home Screen')](https://reddit-timer-su988.vercel.app/)
+[![App Home Screen](public/hero-section.png 'Home Screen')](https://reddit-timer-su988.vercel.app/)
 
 ## Tech Stack
 
