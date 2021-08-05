@@ -9,10 +9,11 @@ const StyledFooter = styled.footer`
   width: 100%;
   max-width: 940px;
   margin: 0 auto;
+  margin-top: 40px;
   height: 100px;
 `;
 
-const StyledHref = styled.a`
+const Logo = styled.p`
   text-decoration: none;
   color: #636363;
   font-size: 0.875em;
@@ -30,7 +31,7 @@ const StyledLink = styled(Link)`
 function Footer() {
   return (
     <StyledFooter>
-      <StyledHref href="https://profy.dev/employers">profy.dev</StyledHref>
+      <Logo>Reddit Timer</Logo>
       <Link to="/">
         <img src="/sign.svg" alt="" />
       </Link>

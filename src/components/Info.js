@@ -39,11 +39,6 @@ const About = styled.p`
   margin-top: -10px;
 `;
 
-const Href = styled.a`
-  text-decoration: none;
-  color: #0186ff;
-`;
-
 function Info() {
   return (
     <Section>
@@ -63,15 +58,8 @@ function Info() {
       <Article>
         <Title id="about">About</Title>
         <About>
-          This app was created during a course on
-          <Href href="https://profy.dev"> profy.dev </Href>
-          with the goal to implement a pixel-perfect real-world application with
-          professional workflows and tools like Kanban, ClickUp, Figma, GitHub,
-          pull requests and code reviews.
-          <Href href="https://profy.dev/employers">
-            {' '}
-            Click here for more information.
-          </Href>
+          Tech stack for this app includes React with Hooks for front-end,
+          Styled Components for styling and Cypress for end to end tesing.
         </About>
       </Article>
     </Section>
